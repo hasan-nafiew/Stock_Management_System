@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using StockManagementProject.Models;
 
 namespace StockManagementProject.Forms
 {
@@ -111,7 +113,11 @@ namespace StockManagementProject.Forms
 
         private void toolStripStokIn_Click(object sender, EventArgs e)
         {
-            
+            string constring = ConString.DbConnection();
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            MessageBox.Show("connection open");
+            con.Close();
         }
     }
 }

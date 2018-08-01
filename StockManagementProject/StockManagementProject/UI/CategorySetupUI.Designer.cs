@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.categoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.categoryVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,25 +81,33 @@
             // 
             this.categoryDataGridView.AllowUserToAddRows = false;
             this.categoryDataGridView.AllowUserToDeleteRows = false;
+            this.categoryDataGridView.AutoGenerateColumns = false;
             this.categoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colName});
+            this.categoryDataGridView.DataSource = this.categoryVMBindingSource;
             this.categoryDataGridView.Location = new System.Drawing.Point(24, 136);
             this.categoryDataGridView.Name = "categoryDataGridView";
             this.categoryDataGridView.ReadOnly = true;
             this.categoryDataGridView.Size = new System.Drawing.Size(274, 164);
             this.categoryDataGridView.TabIndex = 4;
             // 
+            // categoryVMBindingSource
+            // 
+            this.categoryVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CategoryVM);
+            // 
             // colId
             // 
+            this.colId.DataPropertyName = "id";
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             // 
             // colName
             // 
+            this.colName.DataPropertyName = "name";
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -116,6 +127,7 @@
             this.Text = "CategorySetupUI";
             this.Load += new System.EventHandler(this.CategorySetupUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +142,6 @@
         private System.Windows.Forms.DataGridView categoryDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.BindingSource categoryVMBindingSource;
     }
 }

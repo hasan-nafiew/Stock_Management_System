@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
@@ -37,7 +38,11 @@
             this.reorderLabelTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.companyVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyVMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -48,6 +53,7 @@
             this.cancelButton.TabIndex = 10;
             this.cancelButton.Text = "&Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
@@ -57,6 +63,7 @@
             this.saveButton.TabIndex = 11;
             this.saveButton.Text = "&Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // itemNameTextBox
             // 
@@ -110,19 +117,33 @@
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.DataSource = this.categoryVMBindingSource;
+            this.categoryComboBox.DisplayMember = "Name";
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(143, 34);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(224, 21);
             this.categoryComboBox.TabIndex = 14;
+            this.categoryComboBox.ValueMember = "Id";
+            // 
+            // categoryVMBindingSource
+            // 
+            this.categoryVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CategoryVM);
             // 
             // companyComboBox
             // 
+            this.companyComboBox.DataSource = this.companyVMBindingSource;
+            this.companyComboBox.DisplayMember = "Name";
             this.companyComboBox.FormattingEnabled = true;
             this.companyComboBox.Location = new System.Drawing.Point(143, 76);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(224, 21);
             this.companyComboBox.TabIndex = 14;
+            this.companyComboBox.ValueMember = "Id";
+            // 
+            // companyVMBindingSource
+            // 
+            this.companyVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CompanyVM);
             // 
             // ItemSetupUI
             // 
@@ -145,6 +166,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item Entry";
             this.Load += new System.EventHandler(this.ItemSetupUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyVMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +185,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox categoryComboBox;
         private System.Windows.Forms.ComboBox companyComboBox;
+        private System.Windows.Forms.BindingSource categoryVMBindingSource;
+        private System.Windows.Forms.BindingSource companyVMBindingSource;
     }
 }

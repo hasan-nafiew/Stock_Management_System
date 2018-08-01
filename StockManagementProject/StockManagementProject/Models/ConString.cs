@@ -10,7 +10,7 @@ namespace StockManagementProject.Models
     {
         public static string DbConnection()
         {
-            string conString = "server=ADORE\\SQLEXPRESS;Integrated Security=true;Database=StockMS";
+            string conString ="Server=ADORE\\SQLEXPRESS; Integrated Security=true;Database=StockMS";
             return conString;
         }
     }

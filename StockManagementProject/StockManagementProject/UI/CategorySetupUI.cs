@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using StockManagementProject.BLL;
 using StockManagementProject.Models;
 
@@ -26,6 +27,18 @@ namespace StockManagementProject.Forms
             this.MaximumSize = this.Size;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
+
+            //Grid view
+            string _conString = ConString.DbConnection();
+            SqlConnection con = new SqlConnection(_conString);
+            string query = "select id,name from category";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            categoryVMBindingSource.DataSource = dt;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
