@@ -111,7 +111,7 @@ namespace StockManagementProject.Forms
 
         private void toolStripStokIn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(baseLib.mycls.callme());
+            
         }
     }
 }

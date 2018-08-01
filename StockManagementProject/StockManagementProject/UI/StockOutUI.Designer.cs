@@ -42,6 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSell = new System.Windows.Forms.Button();
+            this.btnDamage = new System.Windows.Forms.Button();
+            this.btnLost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,14 +171,44 @@
             this.dataGridView1.Location = new System.Drawing.Point(21, 307);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(763, 109);
+            this.dataGridView1.Size = new System.Drawing.Size(763, 138);
             this.dataGridView1.TabIndex = 46;
+            // 
+            // btnSell
+            // 
+            this.btnSell.Location = new System.Drawing.Point(372, 454);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(75, 23);
+            this.btnSell.TabIndex = 47;
+            this.btnSell.Text = "&Sell";
+            this.btnSell.UseVisualStyleBackColor = true;
+            // 
+            // btnDamage
+            // 
+            this.btnDamage.Location = new System.Drawing.Point(485, 454);
+            this.btnDamage.Name = "btnDamage";
+            this.btnDamage.Size = new System.Drawing.Size(75, 23);
+            this.btnDamage.TabIndex = 47;
+            this.btnDamage.Text = "&Damage";
+            this.btnDamage.UseVisualStyleBackColor = true;
+            // 
+            // btnLost
+            // 
+            this.btnLost.Location = new System.Drawing.Point(600, 454);
+            this.btnLost.Name = "btnLost";
+            this.btnLost.Size = new System.Drawing.Size(75, 23);
+            this.btnLost.TabIndex = 47;
+            this.btnLost.Text = "&Lost";
+            this.btnLost.UseVisualStyleBackColor = true;
             // 
             // StockOutUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 428);
+            this.ClientSize = new System.Drawing.Size(817, 489);
+            this.Controls.Add(this.btnLost);
+            this.Controls.Add(this.btnDamage);
+            this.Controls.Add(this.btnSell);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.availableQtyLabel);
             this.Controls.Add(this.reorderLevelLabel);
@@ -216,5 +249,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Button btnDamage;
+        private System.Windows.Forms.Button btnLost;
     }
 }
