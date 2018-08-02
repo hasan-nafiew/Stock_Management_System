@@ -52,6 +52,7 @@ namespace StockManagementProject.Forms
             _con.Close();
             companyVMBindingSource.DataSource = dt2;
             companyComboBox.SelectedValue = -1;
+            companyComboBox.SelectedText="      ----Select----";
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -84,7 +85,13 @@ namespace StockManagementProject.Forms
             itemNameTextBox.Text = String.Empty;
             companyComboBox.SelectedValue = -1;
             categoryComboBox.SelectedValue = -1;
+            categoryComboBox.SelectedText = "    ----Select----";
             reorderLabelTextBox.Text = "";
+        }
+
+        private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

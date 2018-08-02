@@ -31,7 +31,7 @@ namespace StockManagementProject.Forms
             //Grid view
             string _conString = ConString.DbConnection();
             SqlConnection con = new SqlConnection(_conString);
-            string query = "select id,name from category";
+            string query = "select id,name from category order by id desc";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             con.Open();

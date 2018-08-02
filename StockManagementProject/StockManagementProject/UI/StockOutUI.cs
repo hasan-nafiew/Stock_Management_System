@@ -24,5 +24,11 @@ namespace StockManagementProject.Forms
             this.MinimizeBox = false;
             this.MaximizeBox = false;
         }
+       
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -70,6 +70,8 @@
             // 
             // itemComboBox
             // 
+            this.itemComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.itemComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.itemComboBox.FormattingEnabled = true;
             this.itemComboBox.Location = new System.Drawing.Point(361, 126);
             this.itemComboBox.Name = "itemComboBox";
@@ -96,6 +98,8 @@
             // 
             // companyComboBox
             // 
+            this.companyComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.companyComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.companyComboBox.FormattingEnabled = true;
             this.companyComboBox.Location = new System.Drawing.Point(361, 84);
             this.companyComboBox.Name = "companyComboBox";
@@ -104,6 +108,8 @@
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.categoryComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(361, 42);
             this.categoryComboBox.Name = "categoryComboBox";
@@ -134,6 +140,7 @@
             this.saveButton.TabIndex = 36;
             this.saveButton.Text = "&Add";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label3
             // 

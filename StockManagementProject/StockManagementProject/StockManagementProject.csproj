@@ -57,6 +57,8 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\View\CategoryVM.cs" />
     <Compile Include="Models\View\CompanyVM.cs" />
+    <Compile Include="Models\View\ItemVM.cs" />
+    <Compile Include="Models\View\StockOutVM.cs" />
     <Compile Include="UI\CategorySetupUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +76,12 @@
     </Compile>
     <Compile Include="UI\ItemSetupUI.Designer.cs">
       <DependentUpon>ItemSetupUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LogInUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LogInUI.Designer.cs">
+      <DependentUpon>LogInUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MainUI.cs">
       <SubType>Form</SubType>
@@ -116,6 +124,9 @@
     <EmbeddedResource Include="UI\ItemSetupUI.resx">
       <DependentUpon>ItemSetupUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\LogInUI.resx">
+      <DependentUpon>LogInUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +153,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\StockManagementProject.Models.View.CategoryVM.datasource" />
     <None Include="Properties\DataSources\StockManagementProject.Models.View.CompanyVM.datasource" />
+    <None Include="Properties\DataSources\StockManagementProject.Models.View.ItemVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

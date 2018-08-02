@@ -33,18 +33,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.searchGridView = new System.Windows.Forms.DataGridView();
-            this.searchButton = new System.Windows.Forms.Button();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAvailableQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReorderLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // companyComboBox
             // 
+            this.companyComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.companyComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.companyComboBox.FormattingEnabled = true;
             this.companyComboBox.Location = new System.Drawing.Point(257, 30);
             this.companyComboBox.Name = "companyComboBox";
@@ -53,6 +55,8 @@
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.categoryComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(257, 69);
             this.categoryComboBox.Name = "categoryComboBox";
@@ -96,15 +100,6 @@
             this.searchGridView.Size = new System.Drawing.Size(703, 165);
             this.searchGridView.TabIndex = 49;
             // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(408, 117);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(73, 23);
-            this.searchButton.TabIndex = 48;
-            this.searchButton.Text = "&Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
             // colId
             // 
             this.colId.HeaderText = "Id";
@@ -140,6 +135,15 @@
             this.colReorderLevel.HeaderText = "Reorder Level";
             this.colReorderLevel.Name = "colReorderLevel";
             this.colReorderLevel.ReadOnly = true;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(408, 117);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(73, 23);
+            this.searchButton.TabIndex = 48;
+            this.searchButton.Text = "&Search";
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // SearchAndViewItemSummaryUI
             // 

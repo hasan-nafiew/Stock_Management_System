@@ -117,6 +117,8 @@
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.categoryComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.categoryComboBox.DataSource = this.categoryVMBindingSource;
             this.categoryComboBox.DisplayMember = "Name";
             this.categoryComboBox.FormattingEnabled = true;
@@ -125,6 +127,7 @@
             this.categoryComboBox.Size = new System.Drawing.Size(224, 21);
             this.categoryComboBox.TabIndex = 14;
             this.categoryComboBox.ValueMember = "Id";
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // categoryVMBindingSource
             // 
@@ -132,6 +135,8 @@
             // 
             // companyComboBox
             // 
+            this.companyComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.companyComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.companyComboBox.DataSource = this.companyVMBindingSource;
             this.companyComboBox.DisplayMember = "Name";
             this.companyComboBox.FormattingEnabled = true;
