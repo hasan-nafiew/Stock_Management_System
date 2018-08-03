@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.companyVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reorderLabelTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -41,16 +43,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.itemComboBox = new System.Windows.Forms.ComboBox();
+            this.itemVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.reorderLevelLabel = new System.Windows.Forms.Label();
             this.availableQtyLabel = new System.Windows.Forms.Label();
-            this.categoryVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyVMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // companyComboBox
@@ -65,6 +65,11 @@
             this.companyComboBox.Size = new System.Drawing.Size(224, 21);
             this.companyComboBox.TabIndex = 23;
             this.companyComboBox.ValueMember = "Id";
+            this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
+            // 
+            // companyVMBindingSource
+            // 
+            this.companyVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CompanyVM);
             // 
             // categoryComboBox
             // 
@@ -79,6 +84,10 @@
             this.categoryComboBox.TabIndex = 24;
             this.categoryComboBox.ValueMember = "Id";
             this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
+            // 
+            // categoryVMBindingSource
+            // 
+            this.categoryVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CategoryVM);
             // 
             // reorderLabelTextBox
             // 
@@ -175,6 +184,10 @@
             this.itemComboBox.TabIndex = 29;
             this.itemComboBox.ValueMember = "Id";
             // 
+            // itemVMBindingSource1
+            // 
+            this.itemVMBindingSource1.DataSource = typeof(StockManagementProject.Models.View.ItemVM);
+            // 
             // reorderLevelLabel
             // 
             this.reorderLevelLabel.AutoSize = true;
@@ -195,21 +208,9 @@
             this.availableQtyLabel.TabIndex = 31;
             this.availableQtyLabel.Text = "Category";
             // 
-            // categoryVMBindingSource
-            // 
-            this.categoryVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CategoryVM);
-            // 
-            // companyVMBindingSource
-            // 
-            this.companyVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.CompanyVM);
-            // 
             // itemVMBindingSource
             // 
             this.itemVMBindingSource.DataSource = typeof(StockManagementProject.Models.View.ItemVM);
-            // 
-            // itemVMBindingSource1
-            // 
-            this.itemVMBindingSource1.DataSource = typeof(StockManagementProject.Models.View.ItemVM);
             // 
             // StockInUI
             // 
@@ -234,10 +235,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock In ";
             this.Load += new System.EventHandler(this.StockInUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyVMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryVMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemVMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

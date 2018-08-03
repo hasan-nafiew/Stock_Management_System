@@ -99,5 +99,10 @@ namespace StockManagementProject.Forms
 
 
         }
+
+        private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

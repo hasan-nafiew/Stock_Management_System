@@ -10,12 +10,20 @@ namespace StockManagementProject.BLL
 {
   public  class CategoryManager
     {
-        CategoryRepository categoryRepository=new CategoryRepository();
+        CategoryRepository _categoryRepository=new CategoryRepository();
 
         public bool IsInserted(Category category)
         {
-            bool isInserted = categoryRepository.Add(category);
+            bool isInserted = _categoryRepository.Add(category);
             return isInserted;
         }
+        public bool IsUpdate(Category category)
+        {
+            bool isUpdate = _categoryRepository.Update(category);
+            return isUpdate;
+
+
+        }
     }
+    
 }

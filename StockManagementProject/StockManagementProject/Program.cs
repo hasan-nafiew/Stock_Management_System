@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementProject.Forms;
+using StockManagementProject.UI;
 
 namespace StockManagementProject
 {
@@ -17,7 +18,7 @@ namespace StockManagementProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainUI());
+            Application.Run(new LogInUI());
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockManagementProject.Forms;
 using StockManagementProject.Models;
 
 namespace StockManagementProject.UI
@@ -28,6 +29,13 @@ namespace StockManagementProject.UI
 
             SqlDataAdapter da=new SqlDataAdapter(command);
             DataTable dt=new DataTable();
+            this.Hide();
+            MainUI mainUi=new MainUI();
+            mainUi.ShowDialog();
+            
+            
+            
+
         }
     }
 }
