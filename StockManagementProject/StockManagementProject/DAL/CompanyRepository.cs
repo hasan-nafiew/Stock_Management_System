@@ -11,17 +11,17 @@ namespace StockManagementProject.DAL
 {
    public class CompanyRepository
     {
-        string _conString =ConString.DbConnection();
+        SqlConnection _con = Connection.ConnectionSetup;
         public bool Add(Company company)
         {
            
-            SqlConnection con=new SqlConnection(_conString);
+           
             string query = "insert into company(name)values(@name)";
-            SqlCommand cmd=new SqlCommand(query,con);
+            SqlCommand cmd=new SqlCommand(query,_con);
             cmd.Parameters.AddWithValue("@name", company.Name);
-            con.Open();
+            //con.Open();
             bool isAdd = cmd.ExecuteNonQuery() > 0;
-            con.Close();
+            _con.Close();
 
             return isAdd;
         }

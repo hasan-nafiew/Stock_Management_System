@@ -10,18 +10,20 @@ namespace StockManagementProject.DAL
 {
   public  class ItemRepository
     {
+        SqlConnection _con = Connection.ConnectionSetup;
        public bool Add(Item item)
         {
-            string conString = ConString.DbConnection();
-            SqlConnection con = new SqlConnection(conString);
+            
+           
             string query = "insert into item(name,reorderlevel,categoryId,companyId) values(@name,@reorderlevel,@categoryId,@companyId)";
-            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, _con);
             cmd.Parameters.AddWithValue("@name", item.Name);
             cmd.Parameters.AddWithValue("@reorderlevel", item.Reorderlevel);
             cmd.Parameters.AddWithValue("@categoryId", item.CategoryId);
             cmd.Parameters.AddWithValue("@companyId", item.CompanyId);
-            con.Open();
+           // con.Open();
             bool isAdded = cmd.ExecuteNonQuery() > 0;
+            _con.Close();
             return isAdded;
 
         }

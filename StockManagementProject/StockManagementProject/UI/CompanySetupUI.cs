@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementProject.BLL;
+using StockManagementProject.DAL;
 using StockManagementProject.Models;
 
 namespace StockManagementProject.Forms
@@ -16,6 +17,7 @@ namespace StockManagementProject.Forms
     public partial class CompanySetupUI : Form
     {
         CompanyManager _companyManager = new CompanyManager();
+        SqlConnection _con = Connection.ConnectionSetup;
         public CompanySetupUI()
             
         {
@@ -28,16 +30,13 @@ namespace StockManagementProject.Forms
             this.MaximumSize = this.Size;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
-            //Grid view
-            string _conString = ConString.DbConnection();
-            SqlConnection con = new SqlConnection(_conString);
+            //Grid view                  
             string query = "select id,name from company order by id desc";
-            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, _con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            con.Open();
-            DataTable dt = new DataTable();
+             DataTable dt = new DataTable();
             da.Fill(dt);
-            con.Close();
+            _con.Close();
             companyVMBindingSource.DataSource = dt;
 
 

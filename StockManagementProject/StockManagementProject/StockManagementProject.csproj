@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,7 @@
     <Compile Include="BLL\ItemManager.cs" />
     <Compile Include="DAL\CategoryRepository.cs" />
     <Compile Include="DAL\CompanyRepository.cs" />
+    <Compile Include="DAL\Connection.cs" />
     <Compile Include="DAL\ItemRepository.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Company.cs" />
@@ -165,7 +167,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
